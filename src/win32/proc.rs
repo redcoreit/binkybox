@@ -50,7 +50,7 @@ pub fn get_proc_hwnd_pname(hwnd: HWND) -> Option<String> {
     file.file_stem().map(|s| s.to_string_lossy().into_owned())
 }
 
-pub fn get_proc_hwnd_ppath(hwnd: HWND) -> Option<String> {
+fn get_proc_hwnd_ppath(hwnd: HWND) -> Option<String> {
     let mut pid = 0;
     unsafe {
         GetWindowThreadProcessId(hwnd, Some(&mut pid));

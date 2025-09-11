@@ -13,15 +13,16 @@ use windows::Win32::{
 
 pub fn init() {
 	unsafe {
-		let pid = std::process::id();
-		let exec_info = super::proc::get_exec_info(pid);
-		let is_shell_executed = exec_info
-			.as_ref()
-			.map_or(false, |info| info.is_shell_executed);
+        // disabled for now, it is buggy
+		// let pid = std::process::id();
+		// let exec_info = super::proc::get_exec_info(pid);
+		// let is_shell_executed = exec_info
+			// .as_ref()
+			// .map_or(false, |info| info.is_shell_executed);
 
-		if !is_shell_executed {
-			return;
-		}
+		// // if !is_shell_executed {
+			// return;
+		// }
 
 		// No console attached, allocate one
 
